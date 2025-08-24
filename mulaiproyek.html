@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulai Proyek Anda - BizCorp</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        /* Menggunakan font Inter sebagai default */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Styling untuk progress bar */
+        .progress-bar-fill {
+            transition: width 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header / Navigasi -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">BizCorp</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Beranda</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Tentang Kami</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Layanan</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Karier</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Hubungi Kami</a>
+            </div>
+            <a href="#" class="hidden md:block bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition duration-300 font-semibold">Dapatkan Konsultasi</a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+             <a href="#" class="block text-gray-600 hover:text-indigo-600">Beranda</a>
+            <a href="#" class="block text-gray-600 hover:text-indigo-600">Tentang Kami</a>
+            <a href="#" class="block text-gray-600 hover:text-indigo-600">Layanan</a>
+            <a href="#" class="block text-gray-600 hover:text-indigo-600">Karier</a>
+            <a href="#" class="block text-gray-600 hover:text-indigo-600">Hubungi Kami</a>
+            <a href="#" class="block bg-indigo-600 text-white px-4 py-2 rounded-lg text-center mt-2 font-semibold">Dapatkan Konsultasi</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="bg-white pt-16 pb-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-3">Mari Wujudkan Ide Anda</h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Lengkapi formulir di bawah ini untuk memulai. Tim kami akan segera menghubungi Anda untuk mendiskusikan langkah selanjutnya.</p>
+            </div>
+        </section>
+
+        <!-- Multi-step Form Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-2xl p-8 md:p-12">
+                    
+                    <!-- Progress Bar -->
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <span id="step-title" class="text-lg font-semibold text-indigo-600">Langkah 1: Informasi Kontak</span>
+                            <span id="step-counter" class="text-sm text-gray-500">Langkah 1 dari 4</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full progress-bar-fill" style="width: 25%"></div>
+                        </div>
+                    </div>
+
+                    <form id="project-form">
+                        <!-- Step 1: Contact Info -->
+                        <div id="step-1" class="form-step active">
+                            <h3 class="text-2xl font-bold mb-6">Tentang Anda</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                                    <input type="text" name="name" id="name" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="John Doe" required>
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-sm font-medium text-gray-700">Nama Perusahaan (Opsional)</label>
+                                    <input type="text" name="company" id="company" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="PT Inovasi Maju">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Alamat Email</label>
+                                    <input type="email" name="email" id="email" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="anda@email.com" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Project Details -->
+                        <div id="step-2" class="form-step hidden">
+                            <h3 class="text-2xl font-bold mb-6">Detail Proyek</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="service" class="block text-sm font-medium text-gray-700">Jenis Layanan yang Dibutuhkan</label>
+                                    <select id="service" name="service" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
+                                        <option value="">Pilih layanan...</option>
+                                        <option value="Konsultasi Strategi Bisnis">Konsultasi Strategi Bisnis</option>
+                                        <option value="Pemasaran Digital & Branding">Pemasaran Digital & Branding</option>
+                                        <option value="Pengembangan Teknologi & AI">Pengembangan Teknologi & AI</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="description" class="block text-sm font-medium text-gray-700">Jelaskan Proyek Anda</label>
+                                    <textarea id="description" name="description" rows="5" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Berikan kami gambaran umum tentang tujuan, target audiens, dan fitur utama yang Anda inginkan." required></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Budget & Timeline -->
+                        <div id="step-3" class="form-step hidden">
+                            <h3 class="text-2xl font-bold mb-6">Anggaran & Waktu</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Estimasi Anggaran</label>
+                                    <div class="mt-2 grid grid-cols-2 gap-3">
+                                        <label class="border rounded-lg p-3 flex items-center cursor-pointer hover:bg-indigo-50"><input type="radio" name="budget" value="< Rp 50 Juta" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"><span class="ml-3 text-sm"> &lt; Rp 50 Juta</span></label>
+                                        <label class="border rounded-lg p-3 flex items-center cursor-pointer hover:bg-indigo-50"><input type="radio" name="budget" value="Rp 50 - 150 Juta" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"><span class="ml-3 text-sm">Rp 50 - 150 Juta</span></label>
+                                        <label class="border rounded-lg p-3 flex items-center cursor-pointer hover:bg-indigo-50"><input type="radio" name="budget" value="Rp 150 - 500 Juta" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"><span class="ml-3 text-sm">Rp 150 - 500 Juta</span></label>
+                                        <label class="border rounded-lg p-3 flex items-center cursor-pointer hover:bg-indigo-50"><input type="radio" name="budget" value="> Rp 500 Juta" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"><span class="ml-3 text-sm"> &gt; Rp 500 Juta</span></label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="timeline" class="block text-sm font-medium text-gray-700">Estimasi Waktu Proyek</label>
+                                    <select id="timeline" name="timeline" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
+                                        <option value="">Pilih waktu...</option>
+                                        <option value="1-3 Bulan">1-3 Bulan</option>
+                                        <option value="3-6 Bulan">3-6 Bulan</option>
+                                        <option value="6-12 Bulan">6-12 Bulan</option>
+                                        <option value="Lebih dari 1 tahun">Lebih dari 1 tahun</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Confirmation -->
+                        <div id="step-4" class="form-step hidden">
+                            <h3 class="text-2xl font-bold mb-6">Konfirmasi Detail Anda</h3>
+                            <div id="summary" class="space-y-4 text-gray-700 bg-gray-100 p-6 rounded-lg"></div>
+                            <p class="text-sm text-gray-500 mt-4">Pastikan semua informasi sudah benar sebelum mengirim.</p>
+                        </div>
+                        
+                        <!-- Navigation Buttons -->
+                        <div class="mt-8 flex justify-between">
+                            <button type="button" id="prev-btn" class="bg-gray-200 text-gray-700 font-semibold py-2 px-6 rounded-lg hover:bg-gray-300 transition duration-300 hidden">Kembali</button>
+                            <button type="button" id="next-btn" class="bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 ml-auto">Selanjutnya</button>
+                            <button type="submit" id="submit-btn" class="bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 hidden">Kirim Proyek</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div id="success-message" class="hidden text-center">
+                        <div class="bg-green-100 text-green-700 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="check" class="h-10 w-10"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-2">Terima Kasih!</h2>
+                        <p class="text-gray-600">Informasi proyek Anda telah berhasil kami terima. Tim kami akan segera menghubungi Anda melalui email dalam 1-2 hari kerja.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <!-- Footer content is the same as other pages -->
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div><h3 class="text-xl font-bold mb-4">BizCorp</h3><p class="text-gray-400">Mendorong inovasi dalam dunia bisnis.</p></div>
+                <div><h4 class="font-semibold mb-4">Tautan Cepat</h4><ul class="space-y-2"><li><a href="#" class="text-gray-400 hover:text-white">Tentang Kami</a></li><li><a href="#" class="text-gray-400 hover:text-white">Karier</a></li></ul></div>
+                <div><h4 class="font-semibold mb-4">Layanan</h4><ul class="space-y-2"><li><a href="#" class="text-gray-400 hover:text-white">Konsultasi Bisnis</a></li><li><a href="#" class="text-gray-400 hover:text-white">Pemasaran Digital</a></li></ul></div>
+                <div><h4 class="font-semibold mb-4">Hubungi Kami</h4><p class="text-gray-400">kontak@bizcorp.com</p><div class="flex space-x-4 mt-4"><a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a><a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a></div></div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">&copy; 2024 BizCorp. Seluruh hak cipta dilindungi.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Inisialisasi Feather Icons
+        feather.replace();
+
+        // Logika untuk menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Logika untuk Form Multi-Langkah
+        const steps = document.querySelectorAll('.form-step');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const form = document.getElementById('project-form');
+        const progressBar = document.getElementById('progress-bar');
+        const stepTitle = document.getElementById('step-title');
+        const stepCounter = document.getElementById('step-counter');
+        const successMessage = document.getElementById('success-message');
+
+        let currentStep = 0;
+        const stepTitles = ["Informasi Kontak", "Detail Proyek", "Anggaran & Waktu", "Konfirmasi"];
+
+        const updateFormSteps = () => {
+            steps.forEach((step, index) => {
+                step.classList.toggle('hidden', index !== currentStep);
+            });
+
+            const progress = ((currentStep + 1) / steps.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            stepTitle.textContent = `Langkah ${currentStep + 1}: ${stepTitles[currentStep]}`;
+            stepCounter.textContent = `Langkah ${currentStep + 1} dari ${steps.length}`;
+
+            prevBtn.classList.toggle('hidden', currentStep === 0);
+            nextBtn.classList.toggle('hidden', currentStep === steps.length - 1);
+            submitBtn.classList.toggle('hidden', currentStep !== steps.length - 1);
+        };
+
+        const validateStep = () => {
+            const currentStepInputs = steps[currentStep].querySelectorAll('[required]');
+            let isValid = true;
+            currentStepInputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('border-red-500');
+                } else {
+                    input.classList.remove('border-red-500');
+                }
+            });
+            return isValid;
+        };
+
+        const generateSummary = () => {
+            const formData = new FormData(form);
+            const summaryDiv = document.getElementById('summary');
+            let summaryHTML = '<ul>';
+            summaryHTML += `<li class="py-2 border-b"><strong class="font-medium">Nama:</strong> ${formData.get('name')}</li>`;
+            summaryHTML += `<li class="py-2 border-b"><strong class="font-medium">Perusahaan:</strong> ${formData.get('company') || 'N/A'}</li>`;
+            summaryHTML += `<li class="py-2 border-b"><strong class="font-medium">Email:</strong> ${formData.get('email')}</li>`;
+            summaryHTML += `<li class="py-2 border-b"><strong class="font-medium">Layanan:</strong> ${formData.get('service')}</li>`;
+            summaryHTML += `<li class="py-2 border-b"><strong class="font-medium">Deskripsi:</strong> ${formData.get('description')}</li>`;
+            summaryHTML += `<li class="py-2 border-b"><strong class="font-medium">Anggaran:</strong> ${formData.get('budget') || 'Belum ditentukan'}</li>`;
+            summaryHTML += `<li class="py-2"><strong class="font-medium">Waktu:</strong> ${formData.get('timeline')}</li>`;
+            summaryHTML += '</ul>';
+            summaryDiv.innerHTML = summaryHTML;
+        };
+
+        nextBtn.addEventListener('click', () => {
+            if (validateStep()) {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    if (currentStep === steps.length - 1) {
+                        generateSummary();
+                    }
+                    updateFormSteps();
+                }
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                updateFormSteps();
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Di sini Anda bisa menambahkan logika pengiriman data ke server
+            console.log('Form submitted!');
+            form.classList.add('hidden');
+            document.querySelector('.mb-8').classList.add('hidden'); // Sembunyikan progress bar
+            successMessage.classList.remove('hidden');
+        });
+
+        updateFormSteps();
+    </script>
+
+</body>
+</html>
